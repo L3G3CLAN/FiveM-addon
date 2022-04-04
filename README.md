@@ -5,8 +5,8 @@
 - [1.] copy all directories to the bot directorie
 - [2.] check if the copy was successful
 - [3.] install Discord-Fivem-API [[Discord-Fivem-API]](npmjs.com/package/discord-fivem-api)
-> [./cmd/addons/fivem.js]
-> [./src/addons/fivem.json]
+- > [./cmd/addons/fivem.js]
+- > [./src/addons/fivem.json]
 - all settings of this addon are in [./src/addons/fivem.json]
 - Run the bot
 <br />
