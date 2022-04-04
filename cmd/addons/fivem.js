@@ -1,39 +1,38 @@
 const discord = require("discord.js");
 const fivem = require("discord-fivem-api");
 const fs = require("fs");
-const ip = JSON.parse(fs.readFileSync("./src/addons/fivem.json", "utf-8"));
+const FiveM = JSON.parse(fs.readFileSync("./src/addons/fivem.json", "utf-8"));
 
-//Hier mee haal je het ip op uit /src/addons/fivem-ip.json
-const server = new fivem.DiscordFivemApi(`${ip.server_ip}`);
+//With this you get the IP from /src/addons/fivem.json
+const server = new fivem.DiscordFivemApi(`${FiveM.server_ip}`);
 
 module.exports.run = async (client, message, args) => {
 
-    //Hier mee krijg je de aantal bewooners in de stad.
+    //This gives you the number of Citizens in the city.
     const playersOnline = await server.getPlayersOnline()
 
-    //Hier mee krijg je de Max aantal bewooners in de stad.
+    //This will give you the Max number of Citizens in the city.
     const maxPlayers = await server.getMaxPlayers()
 
     if (playersOnline > 0) {
 
         var onlineEmbed = new discord.MessageEmbed()
-                .setTitle(`${ip.players} ${playersOnline}/${maxPlayers}`)
-        //        .setTitle(`${ip.players} ${players}`)
-                .setDescription("*Hint*\n *je kan ook de knop hier onder indruken!*")
-                .setAuthor(`${ip.online}`)
+                .setTitle(`${FiveM.players} ${playersOnline}/${maxPlayers}`)
+                .setDescription(`${FiveM.embed_disc}`)
+                .setAuthor(`${FiveM.online}`)
                 .setColor(process.env.COLLOR)
                 .setThumbnail(process.env.LOGO)
                 .setImage(process.env.BANNER)
                 .setTimestamp()
-                .setFooter("Join Optus Roleplay")
+                .setFooter(`${FiveM.embed_footer}`)
         
             const row = new discord.MessageActionRow().addComponents(
         
                 new discord.MessageButton()
-                    .setLabel("Join Gelijk")
+                    .setLabel(`${FiveM.join_label}`)
                     .setStyle("LINK")
                     .setEmoji("🎮")
-                    .setURL("https://cfx.re/join/lxz7q4")
+                    .setURL(`${FiveM.join_url}`)
         
             );
 
@@ -45,23 +44,22 @@ module.exports.run = async (client, message, args) => {
     } else if (playersOnline == 0) {
 
         var oflineEmbed = new discord.MessageEmbed()
-//        .setTitle(`${ip.players} ${playersOnline}/${maxPlayers}`)
-        .setTitle(`${ip.players} ${ip.no_players}`)
-        .setDescription("*Hint*\n *je kan ook de knop hier onder indruken!*")
-        .setAuthor(`${ip.online}`)
+        .setTitle(`${FiveM.players} ${FiveM.no_players}`)
+        .setDescription(`${FiveM.embed_disc}`)
+        .setAuthor(`${FiveM.online}`)
         .setColor(process.env.COLLOR)
         .setThumbnail(process.env.LOGO)
         .setImage(process.env.BANNER)
         .setTimestamp()
-        .setFooter("Join Optus Roleplay")
+        .setFooter(`${FiveM.embed_footer}`)
 
     const row = new discord.MessageActionRow().addComponents(
 
         new discord.MessageButton()
-            .setLabel("Join Gelijk")
-            .setStyle("LINK")
-            .setEmoji("🎮")
-            .setURL("https://cfx.re/join/lxz7q4")
+        .setLabel(`${FiveM.join_label}`)
+        .setStyle("LINK")
+        .setEmoji("🎮")
+        .setURL(`${FiveM.join_url}`)
 
     );
 
@@ -75,7 +73,7 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "join",
+    name: "fivem",
     category: "add ons",
-    discription: "Dit is een command die jou de server ip info geeft."
+    discription: FiveM.disc
 }

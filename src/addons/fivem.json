@@ -1,8 +1,15 @@
 {
     "server_ip": "148.251.81.41:9105",
 
-    "no_players": "Geen Bewooners In De Stad.",
-    "players": "Burgers:",
-    "online": "Stad Is Open!",
-    "ofline": "Stad Is Dicht!"
+    "join_label": "Join The Server",
+    "join_url": "https://cfx.re/join/lxz7q4",
+
+    "no_players": "No Citizens In The City.",
+    "players": "Citizens:",
+    "online": "City Is Open!",
+    "ofline": "City Is Clost!",
+    "embed_disc": "*Tip*\n *You can also press the button below!*\n to join the server",
+    "embed_footer": "FiveM addon",
+
+    "disc": "This is a command that gives you the FiveM Server info."
 }
