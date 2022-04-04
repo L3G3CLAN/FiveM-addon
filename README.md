@@ -3,7 +3,7 @@
 - **For this addon you need the following bot!**
 > [[Discord.js V13 Main Bot]](https://github.com/SlimHostdev/discord_v13_main_bot)
 
-- [1.] copy all directories to the bot
+- [1.] copy all directories to the bot directorie
 - [2.] check if the copy was successful
 > [./cmd/addons/fivem.js]
 > [./src/addons/fivem.json]
