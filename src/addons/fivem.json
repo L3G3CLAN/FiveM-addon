@@ -1,8 +1,8 @@
 {
-    "server_ip": "148.251.81.41:9105",
+    "server_ip": "IP HERE LIKE THIS 127.0.0.1:1234 IP NEET A PORT",
+    "join_url": "JOIN URL HERE LIKE THIS URL https://cfx.re/join/lxz7q4",
 
     "join_label": "Join The Server",
-    "join_url": "https://cfx.re/join/lxz7q4",
 
     "no_players": "No Citizens In The City.",
     "players": "Citizens:",
