@@ -6,7 +6,7 @@
 - [2.] check if the copy was successful
 - > [./cmd/addons/fivem.js]
 - > [./src/addons/fivem.json]
-- [3.] install Discord-Fivem-API [[Discord-Fivem-API]](npmjs.com/package/discord-fivem-api)
+- [3.] install Discord-Fivem-API [[Discord-Fivem-API]](https://npmjs.com/package/discord-fivem-api)
 - all settings of this addon are in [./src/addons/fivem.json]
 - Run the bot
 <br />
